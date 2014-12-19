@@ -1,5 +1,10 @@
 <div class="row picture-grid"> 
-  <div class="col-sm-6 image-container" ng-repeat="picture in pictures">
+  <figure class="col-sm-6 image-container" ng-repeat="picture in pictures" ng-mouseenter="picZoom(picture.location)" ng-mouseleave="defaultZoom()">
     <img class="img-responsive img-rounded" src="{{picture.images.standard_resolution.url}}">
-  </div>
+    <figcaption class="img-hover-text">
+      <h3>{{picture.caption.text}}</h3>
+      <p>{{picture.location.name}}</p>
+      <p>{{picture.created_time | date:'MM/dd/yyyy'}}</p>
+    </figcaption>
+  </figure>
 </div>

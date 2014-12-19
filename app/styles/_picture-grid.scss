@@ -1,23 +1,58 @@
 // picture-grid.scss
+@import 'compass/css3/filter';
 
 .side-grid{
-  width: 33%;
-  height: 100%;
-  left: auto;
-  float:left;
   background-color: #303030;
   overflow:auto; 
-  position:absolute;
   border: none;
   border-right: 1px solid #505050;
 }
 
+.map-container {
+  padding: 0;
+  .angular-google-map-container{
+    height: 100%;
+  }
+}
+
 .picture-grid {
-  .image-container {
+  padding: 10px;
+
+  figure {
     padding: 10px;
+    display: block;
     
-    img{
+    img {
       border: 1px solid #505050;
+      @include box-shadow(#202020 2px 2px 4px);
+    }
+
+    figcaption{
+      display: none;
+      position: absolute;
+      z-index: 5;
+    }
+
+    &:hover {
+      img {
+        @include filter(brightness(.5));
       }
+
+      figcaption {
+        display: block;
+        padding: 20px;
+        color: white;
+        top: 0;
+        left: 0;
+
+        h3{
+          margin-top: 0;
+          margin-bottom: 2px;
+        }
+        p{
+          margin-bottom: 2px;
+        }
+      }
+    }
   }
 }
