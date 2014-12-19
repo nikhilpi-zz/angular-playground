@@ -1,0 +1,23 @@
+// picture-grid.scss
+
+.side-grid{
+  width: 33%;
+  height: 100%;
+  left: auto;
+  float:left;
+  background-color: #303030;
+  overflow:auto; 
+  position:absolute;
+  border: none;
+  border-right: 1px solid #505050;
+}
+
+.picture-grid {
+  .image-container {
+    padding: 10px;
+    
+    img{
+      border: 1px solid #505050;
+      }
+  }
+}
