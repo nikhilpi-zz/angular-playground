@@ -26,9 +26,15 @@ angular.module('playgroundApp')
     uiGmapGoogleMapApi.then(function(maps) {
 
     });
+
     var $gmap = angular.element('.angular-google-map-container');
     var w = angular.element($window);
-    $gmap.css('height', w.height() + 'px');
+    $scope.pageHeight = w.height();
+    $gmap.css('height', $scope.pageHeight + 'px');
+
+    w.bind('resize', function () {
+      $scope.pageHeight = w.height();
+    });
 
     $scope.map = { center: { latitude: 0, longitude: 0 }, zoom: 2 };
 
@@ -42,7 +48,7 @@ angular.module('playgroundApp')
       $scope.map.center.latitude = 0;
       $scope.map.center.longitude = 0;
       $scope.map.zoom = 2;
-      console.log("hello");
+      console.log('hello');
     };
 
   }]);

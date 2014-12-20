@@ -3,7 +3,7 @@
 
 .side-grid{
   background-color: #303030;
-  overflow:auto; 
+  // height: 600px;
   border: none;
   border-right: 1px solid #505050;
 }
@@ -17,6 +17,10 @@
 
 .picture-grid {
   padding: 10px;
+  position: absolute;
+  overflow-y: auto; 
+  width: 100%;
+  height: 100%;
 
   figure {
     padding: 10px;
