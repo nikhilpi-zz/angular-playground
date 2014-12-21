@@ -37,6 +37,12 @@ html, body {
       padding: 0;
       li{
         display: inline;
+        & a:hover{
+          text-decoration: underline;
+          -moz-text-decoration-color: white; /* Code for Firefox */
+          text-decoration-color: white;
+          text-decoration-style: double;
+        }
       }
     }
   }
