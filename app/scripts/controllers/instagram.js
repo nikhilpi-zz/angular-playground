@@ -29,11 +29,11 @@ angular.module('playgroundApp')
 
     var $gmap = angular.element('.angular-google-map-container');
     var w = angular.element($window);
-    $scope.pageHeight = w.height();
+    $scope.pageHeight = w.height() - 50;
     $gmap.css('height', $scope.pageHeight + 'px');
 
     w.bind('resize', function () {
-      $scope.pageHeight = w.height();
+      $scope.pageHeight = w.height()-50;
     });
 
     $scope.map = { center: { latitude: 0, longitude: 0 }, zoom: 2 };
@@ -48,7 +48,6 @@ angular.module('playgroundApp')
       $scope.map.center.latitude = 0;
       $scope.map.center.longitude = 0;
       $scope.map.zoom = 2;
-      console.log('hello');
     };
 
   }]);
